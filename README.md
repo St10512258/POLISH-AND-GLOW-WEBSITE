@@ -262,3 +262,5 @@ Student Number: St10512258
 ## How to Run
 Just open index.html in browser, or visit live link above.
 
+---
+
