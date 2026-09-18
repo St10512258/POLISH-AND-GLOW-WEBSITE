@@ -1,0 +1,612 @@
+
+/*=== POLISH & GLOW Styles ===*/
+
+/* =========================================================
+   1. DEFAULT CSS STYLES
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-light);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* =========================================================
+   2. TYPOGRAPHY STYLES
+   ========================================================= */
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 1.5rem 0 1rem;
+  color: var(--color-primary-dark);
+}
+
+.logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  color: var(--color-text-invert);
+}
+
+.responsive-text p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.page-banner h1 {
+  color: var(--color-text-invert);
+}
+
+.page-banner p {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-text-invert);
+}
+
+
+/* =========================================================
+   3. LAYOUT STRUCTURE
+   ========================================================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.image-section {
+  margin-top: 2rem;
+}
+
+footer {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 1rem 0;
+}
+
+/* About page layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.section {
+  text-align: center;
+}
+
+.service-box {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+
+/* =========================================================
+   4. DECORATION & COLOUR
+   ========================================================= */
+:root {
+  /* Girly palette, tuned for readable contrast (WCAG AA) */
+  --color-primary: #c2185b;       /* deep rose — buttons, links on light bg */
+  --color-primary-dark: #5c1a45;  /* deep plum — header/footer background */
+  --color-accent: #ffc94d;        /* warm gold — hover/focus highlight, high visibility */
+  --color-light: #fff0f5;         /* blush — page background */
+  --color-surface: #ffffff;       /* card backgrounds */
+  --color-text: #3a1030;          /* deep plum — body text on light background */
+  --color-text-invert: #ffffff;   /* text used on dark backgrounds */
+  --color-dark-bg: #5c1a45;       /* kept for footer, same as primary-dark for consistency */
+}
+
+header {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-invert);
+}
+
+.image-section img {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-invert);
+}
+
+.socials a {
+  background-color: var(--color-surface);
+  color: var(--color-primary-dark);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-banner {
+  background-color: var(--color-primary);
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.service-box {
+  background-color: var(--color-surface);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* -----------------------------------------------------
+   PICTURE ALIGNMENT & RESIZING
+   Reusable across every page (about, enquiry, services...)
+   ----------------------------------------------------- */
+
+/* Sizing: fixed aspect-ratio + object-fit keeps every photo
+   the same shape no matter what size the original file is,
+   so the layout never jumps around between pages */
+.img-sm, .img-md, .img-lg {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.img-sm { max-width: 260px; }
+.img-md { max-width: 400px; }
+.img-lg { max-width: 600px; }
+
+/* Alignment utilities */
+.img-center {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically (requires a defined container height) */
+  height: 400px;           /* Optional: only needed if centering vertically */
+}
+
+.img-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Pairs an image with text side-by-side; wraps to a stacked
+   layout automatically on small screens (flex-wrap) */
+.media-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.media-row > img {
+  flex: 1 1 280px;
+}
+
+.media-row > .media-text {
+  flex: 2 1 280px;
+}
+
+/* Reverses the order so the image sits on the right on desktop */
+.media-row.img-right {
+  flex-direction: row-reverse;
+}
+
+
+/* =========================================================
+   5. PSEUDO-CLASSES
+   ========================================================= */
+header nav a:hover,
+header nav a:focus {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* The navbar container */
+nav {
+  display: flex;
+  justify-content: center; /* Horizontally centers the items inside */
+  align-items: center;     /* Vertically centers the items inside */
+}
+
+/* The heading inside the navbar */
+nav h1 {
+  margin: 0;
+}
+
+
+/* Navigation bar container */
+.navbar {
+  background-color: blueviolet; /* Sets the blueviolet color */
+  overflow: hidden;
+}
+
+
+/* Unordered list styling */
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Places items in a horizontal row */
+}
+
+/* Link styling */
+.nav-list li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; /* Removes the underline */
+  font-family: sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-list li a:hover {
+  background-color: rgba(0, 0, 0, 0.15); /* Slightly darkens on hover */
+}
+
+/* Update your existing .nav-list class */
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; 
+  gap: 20px; /* Controls the exact space between each item */
+}
+
+
+header nav a:visited {
+  color: var(--color-text-invert);
+}
+
+.socials a:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.nav-toggle-label:hover span {
+  background-color: var(--color-accent);
+}
+
+.responsive-text p:first-letter {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.service-box:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  transition: all 0.25s ease-in-out;
+}
+
+/* Strong, visible focus indicator for keyboard users and low-vision users —
+   never rely on colour change alone, so this pairs with an outline */
+a:focus-visible,
+.nav-toggle-label:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   6. RESPONSIVE NAVIGATION
+   Pure CSS hamburger — checkbox + label, no JavaScript.
+   The checkbox is visually hidden; the label acts as the
+   clickable icon; :checked toggles the nav via a sibling
+   selector in the media query below.
+   ========================================================= */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-text-invert);
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* =========================================================
+   7. MEDIA QUERIES / BREAKPOINTS
+   Tablet (≤768px) and mobile (≤480px)
+   ========================================================= */
+
+/* ---------- TABLET (≤768px) ---------- */
+@media (max-width: 768px) {
+
+  /* Responsive Typography */
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .responsive-text p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  /* Responsive Layout */
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-banner {
+    padding: 1.8rem 1rem;
+  }
+
+  /* Responsive Layout: media-row images sit above the text
+     instead of side-by-side once space gets tight */
+  .media-row,
+  .media-row.img-right {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .media-row > img {
+    flex: none;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* ---------- DESKTOP+ (min-width 769px) ---------- */
+@media (min-width: 769px) {
+  /* Responsive Layout: "Why Choose Us" boxes sit side by side on larger screens */
+  .services-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service-box {
+    flex: 1 1 250px;
+  }
+}
+
+/* ---------- MOBILE (≤480px) ---------- */
+@media (max-width: 480px) {
+
+  /* Responsive Navigation */
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  header nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-primary-dark);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  /* When the checkbox is checked, reveal the menu — no JS needed */
+  .nav-toggle:checked ~ nav {
+    max-height: 300px;
+    padding: 1rem 0;
+  }
+
+  header nav a {
+    padding: 0.6rem 0;
+  }
+
+  header {
+    position: relative;
+  }
+
+  /* Responsive Typography */
+  h1 {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+  }
+
+  .responsive-text p {
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+  }
+
+  /* Responsive Images */
+  .image-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Responsive Layout */
+  .socials {
+    gap: 0.8rem;
+  }
+
+  /* Responsive Layout: enquiry form fields go full-width */
+  .enquiry-form {
+    padding: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   ENQUIRY FORM
+   Styled consistently with the rest of the site's palette
+   ========================================================= */
+.enquiry-form {
+  background-color: var(--color-surface);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.enquiry-form .form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.enquiry-form label {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d8b7c4;
+  border-radius: 6px;
+  color: var(--color-text);
+  background-color: var(--color-light);
+}
+
+.enquiry-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Pseudo-class: clear focus state, essential for accessibility */
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+/* ==========================================
+   NAVIGATION BAR STYLES
+   ========================================== */
+nav {
+    background-color: blueviolet;
+    padding: 15px;
+    display: flex;
+    justify-content: center; /* Centers the headings */
+    align-items: center;
+    gap: 30px;               /* Spacing between headings */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+            opacity: 0.7;
+        }
+    
+        /* This styles the navigation bar blueviolet */
+        nav {
+            background-color: blueviolet;
+            padding: 15px;
+            display: flex;
+            gap: 20px; /* Divides the navigation words cleanly */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+/* ==========================================
+   SUBMIT BUTTON STYLES
+   ========================================== */
+.submit-btn {
+    background-color: blueviolet;
+    color: white;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px; /* Shaped rounded edges */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #7322be;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
