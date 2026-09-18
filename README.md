@@ -9,7 +9,7 @@
 
 ---
 
-# Polish and Glow - Part 1 README
+# Polish and Glow - Part 1 README.
 
 ## 1. Project Overview
 Polish and Glow is a nail salon website. For Part 1, the task was to create the basic structure and layout of the website using only HTML5 and CSS3. No JavaScript, no forms, and no responsiveness were required yet.
@@ -260,4 +260,6 @@ Student Number: St10512258
 ## How to Run
 Just open index.html in browser, or visit live link above.
 ---
+
+
 
