@@ -124,7 +124,7 @@ This layout is consistent on all pages for easy navigation.
 -The hearder has a deep purple color to match the brand.
 -I used display: flex and justify-content: space between to place logo and nav side by side.
 
-**b. Main Content:**
+**b. Main Content:** -
 - Each page has a central main section that holds the page-specific content.
 - On the Home page, it includes:
     - A large welcome heading (H1) - "WELCOME TO POLISH AND GLOW"
