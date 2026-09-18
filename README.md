@@ -225,3 +225,5 @@ https://developers.google.com/youtube/player_parameters
 
 ---
 
+Updated my whole website as I was having errors and I could not run my website 
+
