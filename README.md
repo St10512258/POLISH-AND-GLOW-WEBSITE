@@ -227,3 +227,7 @@ https://developers.google.com/youtube/player_parameters
 
 Updated my whole website as I was having errors and I could not run my website 
 
+---
+
+I rechanged a lot that I had to re commit to have a minimum of 30 commits 
+
