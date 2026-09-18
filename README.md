@@ -235,9 +235,9 @@ Uploaded my Asssets and Pages folder individually.
 ---
 
 ## Technologies Used
--HTML5
--CSS3/ style.css
--A little bit of JavaScript/ Main.js
+-HTML5.
+-CSS3/ style.css.
+-A little bit of JavaScript/ Main.js.
 -Github Pages for hosting.
 
 ---
