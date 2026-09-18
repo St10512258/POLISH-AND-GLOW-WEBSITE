@@ -102,8 +102,6 @@ For Part 2, I fixed the following mistakes:
 - **Fixed in Part 2:** Added enquiry.html with form and JavaScript validation for
   required fields, email format, and phone number.
 
-
-
 ---
 ## 1. Project Overview - PART 1 AND 2
 Polish and Glow is a responsive website for a nail salon business. The purpose of 
