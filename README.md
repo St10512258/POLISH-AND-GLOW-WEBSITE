@@ -234,4 +234,13 @@ I rechanged a lot that I had to re commit to have a minimum of 30 commits
 ---
 
 Uploaded my Asssets and Pages folder individually.
+---
+
+## Technologies Used
+-HTML5
+-CSS3/ style.css
+-A little bit of JavaScript/ Main.js
+-Github Pages for hosting
+
+---
 
