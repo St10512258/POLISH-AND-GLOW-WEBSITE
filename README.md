@@ -71,7 +71,7 @@ For Part 2, I fixed the following mistakes:
   h1 { font-size: 42px; color: #c2185b; text-align: center; }
   p { font-size: 18px; line-height: 1.6; }
 
-### 4. No Semantic Structure and No Layout System
+### 4. No Semantic Structure and No Layout System .
 - **Mistake in Part 1:** I did not use Flexbox, all elements were stacked vertically.
 - **Fixed in Part 2:** I used Flexbox for header, navigation, and service cards:
   header { display: flex; justify-content: space-between; align-items: center; }
