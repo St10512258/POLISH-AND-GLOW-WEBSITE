@@ -244,3 +244,12 @@ Uploaded my Asssets and Pages folder individually.
 
 ---
 
+## Folders Structure
+-/Assets/css - styling
+-/Assets/images - all salon images
+-/Assets/js - JavaScript
+-/Pages - other HTML pages
+-indez.html -main homepage.
+
+---
+
