@@ -253,3 +253,12 @@ Uploaded my Asssets and Pages folder individually.
 
 ---
 
+## Live Website
+https://St10512258.github.io/POLISH-AND-GLOW-WEBSITE/
+
+## Created By
+Student Number: St10512258
+
+## How to Run
+Just open index.html in browser, or visit live link above.
+
