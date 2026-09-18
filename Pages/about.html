@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Polish & Glow Nail Salon</title>
+    <!-- Font Awesome Link for navigation/social icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        :root {
+            --bg-dark: #120917;         /* Deep purple background theme */
+            --bg-card: #1d1126;         /* Lighter purple blocks for card highlights */
+            --purple-glow: #d470ff;     /* Luminous light purple neon shine tint */
+            --purple-neon: #ba55d3;     /* Main signature light purple accent color */
+            --text-light: #f3e8fa;      /* Clean off-white reading text */
+            --text-muted: #c8b3d6;      /* Dimmed purple-gray description details */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(18, 9, 23, 0.95);
+            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #f7eaff;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--purple-glow);
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* MOBILE HAMBURGER BUTTON */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT STRUCTURE */
+        main {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* SECTION HOVER BLOCKS */
+        .about-section {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(212, 112, 255, 0.15);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1, h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* WHY CHOOSE US LIST SYSTEM */
+        .feature-block {
+            margin-top: 25px;
+            padding-top: 20px;
+        }
+
+        .feature-item {
+            margin-bottom: 40px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            color: #f7eaff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-item h3::before {
+            content: '✨';
+            color: var(--purple-glow);
+        }
+
+        /* EXHAUSTIVE THREE-PICTURE CONTAINER ARCHITECTURE */
+        .showcase-img-holder {
+            width: 100%;
+            max-width: 700px;
+            height: 300px;
+            background-color: #241530;
+            border-radius: 8px;
+            margin: 20px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border: 1px solid rgba(212, 112, 255, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .showcase-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* BACK TO TOP ELEMENT */
+        .back-to-top {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+
+        .back-to-top a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-to-top a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* FOOTER MODULE */
+        footer {
+            background-color: #0b050f;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1a0f21;
+            margin-top: 60px;
+        }
+
+        #myparagraph {
+            font-size: 0.85rem;
+            color: #7b6787;
+        }
+
+        /* RESPONSIVE LAYOUT CONSTRAINTS */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #120917;
+                padding: 25px;
+                border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+                text-align: center;
+                gap: 20px;
+            }
+            .nav-links.active { display: flex; }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.6rem; }
+            .showcase-img-holder { height: 220px; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <header>
+        <a href="../index.html" class="nav-logo">Polish & Glow</a>
+        
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <h1>About Polish & Glow</h1>
+        
+        <section class="about-section">
+            <p>
+                Welcome to Polish & Glow Salon, a beauty salon dedicated to helping our clients 
+                look and feel their best. We provide professional nails self-care services in a
+                 comfortable, friendly and relaxing environment.
+            </p>
+            <p>
+                Our Salon focuses on creativity, quality and customer satisfaction. Whether you are 
+                looking for a simple manicure, beautiful nail art or a relaxing pedicure, our goal
+                 is to provide you with an enjoyable salon experience.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p style="margin-top: 15px;">
+                Our mission is to provide high-quality nail care while creating a welcoming
+                 environment where every customer feels confident and special. We believe that
+                 beautiful nails are more than just a beauty treatment - they are a way to
+                 express your personality and style.
+            </p>
+        </section>
+        <img src="../Assets/images/gel nail art.jpg" alt="Another happy customer" width="70%" height="70%">
+
+        <section class="about-section">
+            <h2>Why Choose Us?</h2>
+            
+            <div class="feature-block">
+                
+                <!-- Feature Block 1 -->
+                <div class="feature-item">
+                    <h3>Quality Service</h3>
+                    <p>We focus on providing professional and high-quality nail care service to every customer.</p>
+                    
+                    <!-- Picture Slot 1: Fresh Set of Toe Nails -->
+                    <div class="showcase-img-holder">
+                        <img src="../Assets/images/almond shaped acrylic.webp" alt="A customer showing a fresh set of toe nails" width="100%" height="auto">
+                             </div>
+                </div>
+
+
+                <!-- Feature Block 2 -->
+                <div class="feature-item">
+                    <h3>Creative Designs</h3>
+                    <p>Choose from a variety of colours, styles and creative nail designs to match your personality.</p>
+                    
+                    <!-- Picture Slot 2: Beautiful Custom Nail Designs -->
+                    <div class="showcase-img-holder">
+                        <img src="../Assets/images/Nail pic 2.webp" alt="A happy customer" width="70%" height="auto">
+                    </div>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Polish & Glow Nail Salon</title>
+    <!-- Font Awesome Link for navigation/social icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        :root {
+            --bg-dark: #120917;         /* Deep purple background theme */
+            --bg-card: #1d1126;         /* Slightly lighter purple blocks for menu elements */
+            --purple-glow: #d470ff;     /* Luminous light purple neon shine tint */
+            --purple-neon: #ba55d3;     /* Main signature light purple accent color value */
+            --text-light: #f3e8fa;      /* Clean off-white reading text */
+            --text-muted: #c8b3d6;      /* Dimmed purple-gray description details */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION HEADER LAYOUT */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(18, 9, 23, 0.95);
+            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #f7eaff;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--purple-glow);
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* MOBILE MENU HAMBURGER NAVIGATION COMPONENT */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* MAIN SERVICES WRAPPER CONTAINER */
+        main {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        .intro-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* SERVICE DISPLAY CARDS GRID layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(212, 112, 255, 0.15);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: rgba(212, 112, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        /* TARGET PICTURE BLOCK WORKSPACES FOR INDIVIDUAL CARDS */
+        .service-img-holder {
+            width: 100%;
+            height: 200px;
+            background-color: #241530;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border: 1px solid rgba(212, 112, 255, 0.1);
+        }
+
+        .service-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-info h2 {
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        .service-info p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* RATE TIER LABELS STYLE */
+        .price-tag {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--purple-glow);
+            border-top: 1px solid rgba(212, 112, 255, 0.15);
+            padding-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* BACK TO TOP COMPONENT */
+        .back-to-top {
+            text-align: center;
+            margin: 50px 0 20px;
+        }
+
+        .back-to-top a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-to-top a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* FOOTER MODULE */
+        footer {
+            background-color: #0b050f;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1a0f21;
+            margin-top: 60px;
+        }
+
+        #myparagraph {
+            font-size: 0.85rem;
+            color: #7b6787;
+        }
+
+        /* MOBILE SCREENS INTERACTIVE RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #120917;
+                padding: 25px;
+                border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+                text-align: center;
+                gap: 20px;
+            }
+            .nav-links.active { display: flex; }
+            h1 { font-size: 2.3rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
+        }
+    </style>
+</head>
+<body id="top">
+
+    <header>
+        <a href="../index.html" class="nav-logo">Polish & Glow</a>
+        
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro-section">
+            <h1>Our Services</h1>
+            <p>At Polish & Glow, we offer a variety of professional nail services to help you look and feel beautiful.</p>
+        </section>
+        
+        <div class="services-grid">
+            
+            <!-- Service 1: Classic Manicure -->
+            <div class="service-card">
+                <div class="service-info">
+                    <!-- Picture Slot 1 -->
+                    <div class="service-img-holder">
+                        <img src="../Assets/images/nail image.jpeg" alt="Classic Manicure Service" width="70%" height="auto">
+                    </div>
+                    <h2>Classic Manicure</h2>
+                    <p>Nail shaping, cuticle care, buffing and your choice of beautiful nail polish.</p>
+                </div>
+                <div class="price-tag">From R150</div>
+                <img src="../Assets/images/Nail pic 3.jpg" alt="A beautiful classic set" width="70%" height="auto">
+            </div>
+
+            <!-- Service 2: Gel Nails -->
+            <div class="service-card">
+                <div class="service-info">
+                    <!-- Picture Slot 2 -->
+                    <div class="service-img-holder">
+                        <img src="../Assets/images/gel nail art.jpg" alt="A set of Gel" width="70%" height="auto">
+                    </div>
+                    <h2>Gel Nails</h2>
+                    <p>Long lasting and beautiful gel nails that are perfect for everyday wear and special occasions.</p>
+                </div>
+                <div class="price-tag">From R120 - R250</div>
+                <img src="../Assets/images/gel on hands.jpg" alt="Gel on hands" width="70%" height="auto">
+            </div>
+            <!-- Service 3: Acrylic Nails -->
+            <div class="service-card">
+                <div class="service-info">
+                    <!-- Picture Slot 3 -->
