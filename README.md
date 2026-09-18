@@ -49,7 +49,7 @@ For Part 1 I used a very simple 3-part layout:
 For Part 1, my Polish and Glow website had several errors and was very basic and I made a few changes:
 For Part 2, I fixed the following mistakes:
 
-### 1. CSS File Not Linking / Website Running from Temp Folder
+### 1. CSS File Not Linking / Website Running from Temp Folder.
 - **Mistake in Part 1:** I opened the project directly from the ZIP file in
   AppData/Local/Temp. Because of this, the CSS path./css/styles.css did not load,
   so the picture was not centered and words were small.
