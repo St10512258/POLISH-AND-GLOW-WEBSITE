@@ -240,7 +240,7 @@ Uploaded my Asssets and Pages folder individually.
 -HTML5
 -CSS3/ style.css
 -A little bit of JavaScript/ Main.js
--Github Pages for hosting
+-Github Pages for hosting.
 
 ---
 
