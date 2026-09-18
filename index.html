@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polish & Glow Nail Salon | Beautiful Nails. Beautiful You.</title>
+    <!-- Connected operational library stylesheet for social icon graphics rendering -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        :root {
+            --bg-dark: #120917;         /* Deep purple background theme */
+            --bg-card: #1d1126;         /* Slightly lighter purple block element highlight tint */
+            --purple-glow: #d470ff;     /* Luminous light purple neon shine tint */
+            --purple-neon: #ba55d3;     /* Main signature light purple accent color value */
+            --text-light: #f3e8fa;      /* Clean off-white reading text */
+            --text-muted: #c8b3d6;      /* Dimmed purple-gray description details */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION HEADER HEADER LAYOUT */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(18, 9, 23, 0.95);
+            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #f7eaff;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--purple-glow);
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* MOBILE MENU INTERACTIVE HAMBURGER COMPONENT */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* MAIN CONTENT BLOCK DESIGN AREA */
+        main {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        #datestamp {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--purple-glow);
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* LIGHT PURPLE GLOWING LOGO MAIN TITLE H1 ELEMENT */
+        h1 {
+            text-align: center;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 
+                0 0 10px var(--purple-glow),
+                0 0 20px var(--purple-glow),
+                0 0 40px var(--purple-neon),
+                0 0 60px var(--purple-neon);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        .responsiveness-text {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(212, 112, 255, 0.15);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .responsiveness-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* REPAIRED PICTURE ELEMENT HERO CONTAINER CLASS CONFIGURATION */
+        .image-showcase {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 112, 255, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+        }
+
+        .image-showcase img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* FOOTER STRUCTURE ELEMENTS MODULE */
+        footer {
+            background-color: #0b050f;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1a0f21;
+            margin-top: 60px;
+        }
+
+        .notice-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .socials a {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--purple-glow);
+            transform: scale(1.1);
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        #myparagraph {
+            font-size: 0.85rem;
+            color: #7b6787;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        /* ANIMATED LOGO GLOW SPECS */
+        @keyframes pulse-glow {
+            0% { text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-glow); }
+            100% { text-shadow: 0 0 15px var(--purple-glow), 0 0 30px var(--purple-glow), 0 0 50px var(--purple-neon), 0 0 70px var(--purple-neon); }
+        }
+
+        /* MOBILE SCREENS INTERACTIVE RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #120917;
+                padding: 25px;
+                border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+                text-align: center;
+                gap: 20px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="nav-logo">Polish & Glow</a>
+        
+        <!-- Cleaned navigation container link nodes exactly mapping internal Pages routes architecture -->
+        <nav class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="./Pages/about.html">About Us</a>
+            <a href="./Pages/services.html">Services</a>
+            <a href="./Pages/enquiry.html">Enquiry</a>
+            <a href="./Pages/contact.html">Contact Us</a>
+        </nav>
+        
+        <!-- Fixed broken span closures inside menu icon -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Real-time time stamp element box hook destination -->
+        <div id="datestamp"></div>
+        
+        <h1>POLISH & GLOW NAIL SALON</h1>
+        
+        <div class="responsiveness-text">
+            <p>
+                We combine beauty and wellness by prioritizing high-quality, eco-friendly 
+                choices without ever compromising on your style. From curated master nail art and
+                overlays to deeply restorative hand and foot therapies delivered by dedicated specialists.
+                At Polish & Glow Nail Salon, we invite you to unwind in our modern, Instagram-worthy studio
+                designed for your ultimate relaxation. From pristine premium manicures and restorative spa 
+                therapies to custom, head-turning nail art, our dedicated team is here to elevate your self-care
+                routine. Let us bring out the absolute best in your hands and feet—because you deserve a finish 
+                that truly shines.
+            </p>
+        </div>
+        
+        <!-- Cleaned main interior target graphics showcase mapping layout -->
+        <section class="image-showcase">
+            <img src="./Assets/images/salon inside image.jpg" alt="Polish and Glow Salon Main Interior Presentation Image">
+        </section>
+    </main>
+
+    <footer>
+        <p class="notice-text">
+            <strong>Notice & Terms of Use:</strong> This website of Polish & Glow is copyrighted and it may not be saved,
+            stored or reproduced. It is not limited to storage therefore it can be accessed using e-mails.
+            This website does not allow screenshots therefore to get in touch you are required to use our direct
+            contact details.
+        </p>
+        
+        <!-- Repaired class attribute layout configurations -->
+        <div class="socials">
