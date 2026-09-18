@@ -46,7 +46,7 @@ For Part 1 I used a very simple 3-part layout:
 ---
 ## 3. Mistakes Fixed from Part 1 to Part 2
 
-For Part 1, my Polish and Glow website had several errors and was very basic.
+For Part 1, my Polish and Glow website had several errors and was very basic and I made a few changes:
 For Part 2, I fixed the following mistakes:
 
 ### 1. CSS File Not Linking / Website Running from Temp Folder
