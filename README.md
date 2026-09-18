@@ -172,7 +172,7 @@ Polish-and-Glow-website/
 
 4.  **contact.html:** Shows phone number, email, address, operating hours, and an embedded Google Map.
 
-5.  **enquiry.html:** Contains a form where customers can request appointments. Fields include Name, Email, Phone, Service, Date, Message. Includes form validation using JavaScript.
+5.  **enquiry.html:** Contains a form where customers can request appointments. Fields include Name, Email, Phone, Service, Date, Message. Includes form validation using JavaScript .
 
 ---
 
