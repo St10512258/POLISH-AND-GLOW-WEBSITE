@@ -277,6 +277,9 @@ Just open index.html in browser, or visit live link above.
     -Feedback
     -Complaint
     -could be a general question
+    -Booking change
+    -And other option
+    
 
 
 
