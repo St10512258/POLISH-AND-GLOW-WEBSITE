@@ -271,6 +271,7 @@ Just open index.html in browser, or visit live link above.
 
 #Contact Us - Ice Task 4
 -There's a email address of the salon where a customer could get in touch with us as a salon
+-There's a box full of the salon's contact details including cell numbers
 -
 
 
