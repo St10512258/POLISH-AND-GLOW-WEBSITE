@@ -262,5 +262,16 @@ Just open index.html in browser, or visit live link above.
 
 ---
 
+#Enquiry Form - Ice Task 4
+-Added a submit button as my website did not have this 
+- Added a variety of options for customers to choose from
+- Added the different days of the week for customer to choose from
+- Added options of nails to also choose from
+- And a Message box where a customer can disclose further how they want their treatment.
+
+#Contact Us - Ice Task 4
+-There's a email address of the salon where a customer could get in touch with us as a salon
+-
+
 
 
