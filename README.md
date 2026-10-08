@@ -268,6 +268,7 @@ Just open index.html in browser, or visit live link above.
 - Added the different days of the week for customer to choose from
 - Added options of nails to also choose from
 - And a Message box where a customer can disclose further how they want their treatment.
+---
 
 #Contact Us - Ice Task 4
 -There's a email address of the salon where a customer could get in touch with us as a salon
@@ -279,7 +280,8 @@ Just open index.html in browser, or visit live link above.
     -could be a general question
     -Booking change
     -And other option
-    
+    A customer will be told when typing that a certain number of characters are allowed and where it stops (maximu)
+---
 
 
 
