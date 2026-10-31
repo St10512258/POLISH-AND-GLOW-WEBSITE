@@ -5,11 +5,11 @@
 -Student Name: Sibahle Jacob
 -Student Number: ST10512258
 -Module: Web Development
-- Due Date: 18 September 2026
+-Date: 18 September 2026
 
 ---
 
-# Polish and Glow - Part 1 .
+# Polish and Glow - Part 1 README
 
 ## 1. Project Overview
 Polish and Glow is a nail salon website. For Part 1, the task was to create the basic structure and layout of the website using only HTML5 and CSS3. No JavaScript, no forms, and no responsiveness were required yet.
@@ -46,10 +46,10 @@ For Part 1 I used a very simple 3-part layout:
 ---
 ## 3. Mistakes Fixed from Part 1 to Part 2
 
-For Part 1, my Polish and Glow website had several errors and was very basic and I made a few changes:
+For Part 1, my Polish and Glow website had several errors and was very basic.
 For Part 2, I fixed the following mistakes:
 
-### 1. CSS File Not Linking / Website Running from Temp Folder.
+### 1. CSS File Not Linking / Website Running from Temp Folder
 - **Mistake in Part 1:** I opened the project directly from the ZIP file in
   AppData/Local/Temp. Because of this, the CSS path./css/styles.css did not load,
   so the picture was not centered and words were small.
@@ -71,7 +71,7 @@ For Part 2, I fixed the following mistakes:
   h1 { font-size: 42px; color: #c2185b; text-align: center; }
   p { font-size: 18px; line-height: 1.6; }
 
-### 4. No Semantic Structure and No Layout System .
+### 4. No Semantic Structure and No Layout System
 - **Mistake in Part 1:** I did not use Flexbox, all elements were stacked vertically.
 - **Fixed in Part 2:** I used Flexbox for header, navigation, and service cards:
   header { display: flex; justify-content: space-between; align-items: center; }
@@ -102,6 +102,8 @@ For Part 2, I fixed the following mistakes:
 - **Fixed in Part 2:** Added enquiry.html with form and JavaScript validation for
   required fields, email format, and phone number.
 
+
+
 ---
 ## 1. Project Overview - PART 1 AND 2
 Polish and Glow is a responsive website for a nail salon business. The purpose of 
@@ -122,7 +124,7 @@ This layout is consistent on all pages for easy navigation.
 -The hearder has a deep purple color to match the brand.
 -I used display: flex and justify-content: space between to place logo and nav side by side.
 
-**b. Main Content:** -
+**b. Main Content:**
 - Each page has a central main section that holds the page-specific content.
 - On the Home page, it includes:
     - A large welcome heading (H1) - "WELCOME TO POLISH AND GLOW"
@@ -172,7 +174,7 @@ Polish-and-Glow-website/
 
 4.  **contact.html:** Shows phone number, email, address, operating hours, and an embedded Google Map.
 
-5.  **enquiry.html:** Contains a form where customers can request appointments. Fields include Name, Email, Phone, Service, Date, Message. Includes form validation using JavaScript .
+5.  **enquiry.html:** Contains a form where customers can request appointments. Fields include Name, Email, Phone, Service, Date, Message. Includes form validation using JavaScript.
 
 ---
 
@@ -221,66 +223,6 @@ YouTube Developers, 2024. Embed a YouTube Player. [online] Available at:
 https://developers.google.com/youtube/player_parameters
 [Accessed 14 September 2026].
 
----
-
-Updated my whole website as I was having errors and I could not run my website.
-
----
-
-I rechanged a lot that I had to re commit to have a minimum of 30 commits.
-
----
-
-Uploaded my Asssets and Pages folder individually.
----
-
-## Technologies Used
--HTML5.
--CSS3/ style.css.
--A little bit of JavaScript/ Main.js.
--Github Pages for hosting.
-
----
-
-## Folders Structure
--/Assets/css - styling.
--/Assets/images - all salon images.
--/Assets/js - JavaScript.
--/Pages - other HTML pages.
--indez.html -main homepage.
-
----
-
-## Live Website
-https://St10512258.github.io/POLISH-AND-GLOW-WEBSITE/ .
-
-## Created By
-Student Number: St10512258.
-
-## How to Run .
-Just open index.html in browser, or visit live link above.
-
----
-
-#Enquiry Form - Ice Task 4
--Added a submit button as my website did not have this 
-- Added a variety of options for customers to choose from
-- Added the different days of the week for customer to choose from
-- Added options of nails to also choose from
-- And a Message box where a customer can disclose further how they want their treatment.
----
-
-#Contact Us - Ice Task 4
--There's a email address of the salon where a customer could get in touch with us as a salon
--There's a box full of the salon's contact details including cell numbers
--There's an option where a customer can choose a type of message they are going to send 
-    -Could be a general message 
-    -Feedback
-    -Complaint
-    -could be a general question
-    -Booking change
-    -And other option
-    A customer will be told when typing that a certain number of characters are allowed and where it stops (maximu)
 ---
 
 # PART 3 - POE
@@ -370,7 +312,7 @@ An internet connection is needed to load the icons and fonts.
 
 ## Author
 
-[Sibahle Jacob]
+[Your Name]
 
 ## Changelog
 
@@ -384,8 +326,4 @@ An internet connection is needed to load the icons and fonts.
 
 - BlueWave demo project (JavaScript for the hamburger menu, date stamp, accordion, form validation and clock)
 - W3Schools. How to create a responsive mobile navbar. https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
-
-
-
-
 
