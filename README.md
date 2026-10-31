@@ -312,7 +312,7 @@ An internet connection is needed to load the icons and fonts.
 
 ## Author
 
-Sibahle Jacob]
+[Sibahle Jacob]
 
 ## Changelog
 
