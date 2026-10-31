@@ -20,7 +20,7 @@ The goal of Part 1 was to show the business idea, brand, and basic content.
 
 ### Overall Page Layout
 For Part 1 I used a very simple 3-part layout:
-**Header -> Main Content -> Footer**
+**Header -> Main Content -> Footer**.
 
 **a. Header:**
 - Contains the business name/logo "Polish and Glow" on the left.
