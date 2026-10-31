@@ -3,81 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polish & Glow Nail Salon | Beautiful Nails. Beautiful You.</title>
-    <!-- Connected operational library stylesheet for social icon graphics rendering -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    
+    <title>Polish &amp; Glow Nail Salon | Beautiful Nails. Beautiful You.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+    <!-- Font Awesome for the social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
     <style>
         :root {
-            --bg-dark: #120917;         /* Deep purple background theme */
-            --bg-card: #1d1126;         /* Slightly lighter purple block element highlight tint */
-            --purple-glow: #d470ff;     /* Luminous light purple neon shine tint */
-            --purple-neon: #ba55d3;     /* Main signature light purple accent color value */
-            --text-light: #f3e8fa;      /* Clean off-white reading text */
-            --text-muted: #c8b3d6;      /* Dimmed purple-gray description details */
+            --bg-dark: #120917;
+            --bg-card: #1d1126;
+            --bg-deep: #0b050f;
+            --purple-glow: #d470ff;
+            --purple-neon: #ba55d3;
+            --text-light: #f3e8fa;
+            --text-muted: #c8b3d6;
+            --line: rgba(212, 112, 255, 0.18);
+            --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --body: 'Jost', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
+            font-family: var(--body);
+            background:
+                radial-gradient(ellipse 70% 40% at 50% 0%, rgba(186, 85, 211, 0.22), transparent 70%),
+                var(--bg-dark);
+            background-repeat: no-repeat;
             color: var(--text-light);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* NAVIGATION HEADER HEADER LAYOUT */
+        a:focus-visible, .hamburger:focus-visible {
+            outline: 2px solid var(--purple-glow);
+            outline-offset: 3px;
+        }
+
+        /* ---------- HEADER / NAV ---------- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: rgba(18, 9, 23, 0.95);
-            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            padding: 18px 48px;
+            background-color: rgba(18, 9, 23, 0.94);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .nav-logo {
-            font-size: 1.6rem;
-            font-weight: bold;
+            font-family: var(--display);
+            font-size: 1.9rem;
+            font-weight: 700;
             color: #f7eaff;
             text-decoration: none;
-            letter-spacing: 1px;
-            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 22px var(--purple-neon);
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
-            gap: 25px;
+            gap: 30px;
         }
 
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s, text-shadow 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a[aria-current="page"] {
             color: var(--purple-glow);
+            border-bottom-color: var(--purple-glow);
             text-shadow: 0 0 8px var(--purple-glow);
         }
 
-        /* MOBILE MENU INTERACTIVE HAMBURGER COMPONENT */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -87,135 +97,213 @@
         }
 
         .hamburger span {
-            width: 25px;
+            width: 26px;
             height: 3px;
             background-color: var(--text-light);
             transition: all 0.3s ease;
             border-radius: 2px;
         }
 
-        /* MAIN CONTENT BLOCK DESIGN AREA */
+        /* ---------- MAIN ---------- */
         main {
-            max-width: 950px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 48px 24px 0;
         }
 
         #datestamp {
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--purple-glow);
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-weight: 500;
+            margin-bottom: 18px;
             letter-spacing: 1px;
         }
 
-        /* LIGHT PURPLE GLOWING LOGO MAIN TITLE H1 ELEMENT */
         h1 {
+            font-family: var(--display);
             text-align: center;
-            font-size: 3.2rem;
+            font-size: clamp(2.6rem, 7vw, 4.8rem);
+            line-height: 1.1;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 30px;
-            text-shadow: 
+            margin-bottom: 14px;
+            text-shadow:
                 0 0 10px var(--purple-glow),
-                0 0 20px var(--purple-glow),
-                0 0 40px var(--purple-neon),
-                0 0 60px var(--purple-neon);
+                0 0 24px var(--purple-glow),
+                0 0 44px var(--purple-neon),
+                0 0 66px var(--purple-neon);
             animation: pulse-glow 3s infinite alternate;
         }
 
-        .responsiveness-text {
-            background-color: var(--bg-card);
-            border: 1px solid rgba(212, 112, 255, 0.15);
-            border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 40px;
+        .tagline {
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .responsiveness-text p {
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 1.5rem;
             color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.8;
+            margin-bottom: 36px;
         }
 
-        /* REPAIRED PICTURE ELEMENT HERO CONTAINER CLASS CONFIGURATION */
-        .image-showcase {
-            width: 100%;
-            border-radius: 12px;
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 64px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 30px;
+            border-radius: 50px;
+            font-family: var(--body);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--purple-neon), #8e3fb5);
+            color: #fff;
+            box-shadow: 0 0 18px rgba(212, 112, 255, 0.45);
+        }
+
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(212, 112, 255, 0.75); }
+
+        .btn-outline {
+            color: var(--text-light);
+            border: 1.5px solid var(--purple-glow);
+        }
+
+        .btn-outline:hover { background-color: rgba(212, 112, 255, 0.14); transform: translateY(-2px); }
+
+        .about-text {
+            max-width: 760px;
+            margin: 0 auto 72px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: var(--display);
+            font-size: clamp(2rem, 4.5vw, 2.8rem);
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 18px;
+            text-shadow: 0 0 14px rgba(212, 112, 255, 0.55);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.12rem;
+            line-height: 1.9;
+        }
+
+        /* ---------- SERVICES ---------- */
+        .services { margin-bottom: 72px; text-align: center; }
+        .services .intro { color: var(--text-muted); margin-bottom: 32px; }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 28px 18px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--purple-glow);
+            box-shadow: 0 0 22px rgba(212, 112, 255, 0.3);
+        }
+
+        .service-card i { font-size: 1.6rem; color: var(--purple-glow); margin-bottom: 14px; }
+        .service-card h3 { font-family: var(--display); font-size: 1.45rem; font-weight: 600; color: #fff; }
+        .service-card .price { font-size: 1.25rem; font-weight: 600; color: var(--purple-glow); margin-top: 6px; }
+        .service-card .note { font-size: 0.9rem; color: var(--text-muted); }
+
+        .nail-art-note { margin-top: 22px; color: var(--text-muted); }
+        .nail-art-note strong { color: var(--purple-glow); }
+
+        /* ---------- VISIT / CTA ---------- */
+        .visit {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: linear-gradient(135deg, #2a1538, #1d1126);
+            border: 1px solid var(--line);
+            border-radius: 18px;
             overflow: hidden;
-            border: 1px solid rgba(212, 112, 255, 0.1);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            margin-bottom: 40px;
+            box-shadow: 0 0 36px rgba(186, 85, 211, 0.2);
         }
 
-        .image-showcase img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
+        .visit > div { padding: 42px 36px; }
+        .visit h2 { font-size: 2.1rem; }
+        .visit p { color: var(--text-muted); margin-bottom: 22px; }
+        .visit .hours { border-left: 1px solid var(--line); }
+        .visit .hours dt { font-weight: 600; color: var(--purple-glow); }
+        .visit .hours dd { color: var(--text-light); margin-bottom: 10px; }
 
-        /* FOOTER STRUCTURE ELEMENTS MODULE */
+        /* ---------- FOOTER ---------- */
         footer {
-            background-color: #0b050f;
-            padding: 40px 20px;
+            background-color: var(--bg-deep);
+            padding: 44px 20px 32px;
             text-align: center;
             border-top: 1px solid #1a0f21;
-            margin-top: 60px;
+            margin-top: 72px;
         }
 
         .notice-text {
             font-size: 0.85rem;
             color: var(--text-muted);
-            max-width: 750px;
-            margin: 0 auto 25px;
-            line-height: 1.6;
+            max-width: 760px;
+            margin: 0 auto 26px;
+            line-height: 1.7;
             text-align: justify;
         }
 
         .socials {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-bottom: 25px;
+            gap: 26px;
+            margin-bottom: 22px;
         }
 
         .socials a {
             color: var(--text-light);
-            font-size: 1.4rem;
-            transition: color 0.3s, transform 0.3s;
+            font-size: 1.5rem;
+            transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
         }
 
         .socials a:hover {
             color: var(--purple-glow);
-            transform: scale(1.1);
-            text-shadow: 0 0 8px var(--purple-glow);
+            transform: scale(1.15);
+            text-shadow: 0 0 10px var(--purple-glow);
         }
 
-        #myparagraph {
-            font-size: 0.85rem;
-            color: #7b6787;
-            text-align: center;
-            margin-top: 15px;
-        }
+        #myparagraph { font-size: 0.85rem; color: #8d7a9a; text-align: center; margin-top: 12px; }
 
-        /* ANIMATED LOGO GLOW SPECS */
         @keyframes pulse-glow {
-            0% { text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-glow); }
+            0%   { text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-glow); }
             100% { text-shadow: 0 0 15px var(--purple-glow), 0 0 30px var(--purple-glow), 0 0 50px var(--purple-neon), 0 0 70px var(--purple-neon); }
         }
 
-        /* MOBILE SCREENS INTERACTIVE RESPONSIVE MEDIA QUERIES */
+        @media (prefers-reduced-motion: reduce) {
+            h1 { animation: none; }
+            html { scroll-behavior: auto; }
+            * { transition: none !important; }
+        }
+
+        /* ---------- MOBILE ---------- */
         @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-            .hamburger {
-                display: flex;
-            }
+            header { padding: 14px 20px; }
+            .hamburger { display: flex; }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -224,17 +312,16 @@
                 left: 0;
                 width: 100%;
                 background-color: #120917;
-                padding: 25px;
-                border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+                padding: 24px;
+                border-bottom: 1px solid var(--line);
                 text-align: center;
-                gap: 20px;
+                gap: 18px;
             }
-            .nav-links.active {
-                display: flex;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
+            .nav-links.active { display: flex; }
+            main { padding-top: 32px; }
+            .visit { grid-template-columns: 1fr; }
+            .visit .hours { border-left: none; border-top: 1px solid var(--line); }
+            .visit > div { padding: 32px 24px; }
             .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
             .hamburger.active span:nth-child(2) { opacity: 0; }
             .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
@@ -244,18 +331,16 @@
 <body>
 
     <header>
-        <a href="index.html" class="nav-logo">Polish & Glow</a>
-        
-        <!-- Cleaned navigation container link nodes exactly mapping internal Pages routes architecture -->
+        <a href="index.html" class="nav-logo">Polish &amp; Glow</a>
+
         <nav class="nav-links">
-            <a href="index.html">HOME</a>
+            <a href="index.html" aria-current="page">Home</a>
             <a href="./Pages/about.html">About Us</a>
             <a href="./Pages/services.html">Services</a>
             <a href="./Pages/enquiry.html">Enquiry</a>
             <a href="./Pages/contact.html">Contact Us</a>
         </nav>
-        
-        <!-- Fixed broken span closures inside menu icon -->
+
         <div class="hamburger">
             <span></span>
             <span></span>
@@ -264,37 +349,111 @@
     </header>
 
     <main>
-        <!-- Real-time time stamp element box hook destination -->
         <div id="datestamp"></div>
-        
-        <h1>POLISH & GLOW NAIL SALON</h1>
-        
-        <div class="responsiveness-text">
-            <p>
-                We combine beauty and wellness by prioritizing high-quality, eco-friendly 
-                choices without ever compromising on your style. From curated master nail art and
-                overlays to deeply restorative hand and foot therapies delivered by dedicated specialists.
-                At Polish & Glow Nail Salon, we invite you to unwind in our modern, Instagram-worthy studio
-                designed for your ultimate relaxation. From pristine premium manicures and restorative spa 
-                therapies to custom, head-turning nail art, our dedicated team is here to elevate your self-care
-                routine. Let us bring out the absolute best in your hands and feet—because you deserve a finish 
-                that truly shines.
-            </p>
+
+        <h1>POLISH &amp; GLOW NAIL SALON</h1>
+        <p class="tagline">Beautiful nails. Beautiful you.</p>
+
+        <div class="hero-buttons">
+            <a href="./Pages/enquiry.html" class="btn btn-primary">Make an enquiry</a>
+            <a href="./Pages/services.html" class="btn btn-outline">See our services</a>
         </div>
-        
-        <!-- Cleaned main interior target graphics showcase mapping layout -->
-        <section class="image-showcase">
-            <img src="./Assets/images/salon inside image.jpg" alt="Polish and Glow Salon Main Interior Presentation Image">
+
+        <section class="about-text">
+            <h2>Your hands and feet deserve a finish that shines</h2>
+            <p>
+                We combine beauty and wellness with high-quality, eco-friendly products, without
+                compromising on your style. From curated nail art and overlays to restorative hand
+                and foot therapies delivered by dedicated specialists, every visit is made for you.
+                Unwind in our modern, Instagram-worthy studio, and let us bring out the best in
+                your self-care routine.
+            </p>
+        </section>
+
+        <section class="services">
+            <h2>Our services</h2>
+            <p class="intro">Simple, honest prices for every treatment.</p>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Classic Manicure</h3>
+                    <p class="price">R150</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-gem"></i>
+                    <h3>Gel Manicure</h3>
+                    <p class="price">R250</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <h3>Acrylic Full Set</h3>
+                    <p class="price">R400</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Pedicure</h3>
+                    <p class="price">R200</p>
+                </div>
+            </div>
+            <p class="nail-art-note">Add custom nail art to any treatment for <strong>+R80 per person</strong>.</p>
+        </section>
+
+        <section class="visit">
+            <div>
+                <h2>Book your appointment</h2>
+                <p>Tell us what you have in mind and our team will get back to you to confirm a time that suits you.</p>
+                <a href="./Pages/enquiry.html" class="btn btn-primary">Make an enquiry</a>
+            </div>
+            <div class="hours">
+                <h2>Opening hours</h2>
+                <dl>
+                    <dt>Monday to Saturday</dt>
+                    <dd>Open for appointments</dd>
+                    <dt>Sunday</dt>
+                    <dd>Closed</dd>
+                </dl>
+                <p>Questions first? <a href="./Pages/contact.html" style="color: var(--purple-glow);">Contact us</a>.</p>
+            </div>
         </section>
     </main>
 
     <footer>
         <p class="notice-text">
-            <strong>Notice & Terms of Use:</strong> This website of Polish & Glow is copyrighted and it may not be saved,
+            <strong>Notice &amp; Terms of Use:</strong> This website of Polish &amp; Glow is copyrighted and it may not be saved,
             stored or reproduced. It is not limited to storage therefore it can be accessed using e-mails.
             This website does not allow screenshots therefore to get in touch you are required to use our direct
             contact details.
         </p>
-        
-        <!-- Repaired class attribute layout configurations -->
+
         <div class="socials">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <p id="myparagraph">&copy; 2026 Polish &amp; Glow Nail Salon.</p>
+    </footer>
+
+    <script src="./js/main.js" defer></script>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active'); // animate hamburger
+        });
+
+        //DATE STAMP ADDED
+            function displayDate() {
+            const today = new Date();
+
+            const dateStr = today.toDateString(); // e.g., 'Fri Oct 11 2024'
+
+            document.getElementById("datestamp").innerHTML = `Today's Date: ${dateStr}`;
+        }
+
+            displayDate();
+    </script>
+</body>
+</html>
