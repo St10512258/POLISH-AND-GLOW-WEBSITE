@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Polish & Glow Nail Salon</title>
+    <!-- Font Awesome Link for navigation/social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #120917;         /* Deep purple background theme */
+            --bg-card: #1d1126;         /* Slightly lighter purple blocks for content grouping */
+            --purple-glow: #d470ff;     /* Luminous light purple neon shine tint */
+            --purple-neon: #ba55d3;     /* Main signature light purple accent color value */
+            --text-light: #f3e8fa;      /* Clean off-white reading text */
+            --text-muted: #c8b3d6;      /* Dimmed purple-gray description details */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION HEADER LAYOUT */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(18, 9, 23, 0.95);
+            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #f7eaff;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--purple-glow);
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* MOBILE MENU HAMBURGER NAVIGATION COMPONENT */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* MAIN WRAPPER CONTAINER */
+        main {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            padding-bottom: 10px;
+        }
+
+        /* GRID TWO-COLUMN CONFIGURATION FOR SECTIONS */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(212, 112, 255, 0.15);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* CONTACT DETAIL LABELS */
+        .contact-info-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .contact-info-list li {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-info-list strong {
+            color: #f7eaff;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .contact-info-list span {
+            color: var(--text-light);
+        }
+
+        .contact-info-list a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info-list a:hover {
+            color: #fff;
+            text-shadow: 0 0 5px var(--purple-glow);
+        }
+
+        /* MAP LINK ACCENT BUTTON STYLE */
+        .map-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--purple-neon), #9932cc);
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 10px rgba(186, 85, 211, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .map-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--purple-glow);
+        }
+
+        /* BACK TO TOP OF PAGE LINK */
+        .back-to-top {
+            text-align: center;
+            margin: 50px 0 20px;
+        }
+
+        .back-to-top a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .back-to-top a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* FOOTER MODULE */
+        footer {
+            background-color: #0b050f;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1a0f21;
+            margin-top: 60px;
+        }
+
+        #myparagraph {
+            font-size: 0.85rem;
+            color: #7b6787;
+        }
+
+        /* MOBILE SCREENS INTERACTIVE RESPONSIVE MEDIA QUERIES */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #120917;
+                padding: 25px;
+                border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+                text-align: center;
+                gap: 20px;
+            }
+            .nav-links.active { display: flex; }
+            h1 { font-size: 2.3rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+                /* ---- NEW: contact form styles ---- */
+        :root {
+            --input-focus: #311c40;
+            --error: #ff8fa3;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f7eaff;
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--bg-dark);
+            border: 1px solid rgba(212, 112, 255, 0.2);
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 1rem;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control::placeholder { color: #5d486b; }
+
+        .form-control:focus {
+            border-color: var(--purple-glow);
+            background-color: var(--input-focus);
+            box-shadow: 0 0 8px rgba(212, 112, 255, 0.2);
+        }
+
+        select.form-control { cursor: pointer; }
+        select.form-control option { background-color: var(--bg-dark); color: var(--text-light); }
+        textarea.form-control { resize: vertical; min-height: 130px; }
+
+        .form-control.invalid { border-color: var(--error); }
+        .error-msg { color: var(--error); font-size: 0.85rem; margin: 6px 0 0; min-height: 1.2rem; line-height: 1.4; }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--purple-neon), #9932cc);
+            color: #fff;
+            padding: 15px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(186, 85, 211, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px var(--purple-glow);
+        }
+
+        .status-box {
+            display: none;
+            margin-top: 20px;
+            padding: 16px 18px;
+            background-color: var(--input-focus);
+            border: 1px solid var(--purple-glow);
+            border-radius: 10px;
+        }
+
+        .status-box.show { display: block; }
+        .status-box p { margin-bottom: 0; font-size: 0.95rem; line-height: 1.6; }
+        .status-box a { color: var(--purple-glow); }
+
+        .open-status { font-weight: 600; margin-top: 4px; }
+.open-status.open { color: #7be0a4; }
+.open-status.closed { color: var(--error); }
+
+.char-count { font-size: 0.8rem; color: var(--text-muted); margin: 6px 0 0; text-align: right; }
+.char-count.ok { color: #7be0a4; }
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-neon), #9932cc);
+    color: #fff;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(186, 85, 211, 0.5);
+    z-index: 1000;
+}
+    </style>
+</head>
+<body id="top">
+
+    <header>
+        <a href="../index.html" class="nav-logo">Polish & Glow</a>
+        
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html" class="active">Contact Us</a>
+        </nav>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        
+        <!-- Top Mission Description Box -->
+        <div class="contact-card" style="margin-bottom: 30px;">
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 0;">
+                Polish & Glow will be a modern, sustainable nail salon offering premium manicures, pedicures, nail art and spa treatment in a relaxing, Instagram-worthy space. Our mission is to combine beauty, wellness and sustainability, attracting style-conscious clients who value quality and self-care.
+            </p>
+        </div>
+        
+        <div class="contact-grid">
+            
+            <!-- Column 1: Get In Touch Details -->
+            <div class="contact-card">
+                <h2>Get in Touch</h2>
+                <ul class="contact-info-list">
+                    <li>
+                        <strong>Email Address:</strong>
+                        <span><a href="mailto:info@polishandglow.co.za">info@polishandglow.co.za</a></span>
+                    </li>
+                    <li>
+                        <strong>Phone Number:</strong>
+                        <span><a href="tel:0414537689">(041)-453-7689</a></span>
+                        <span id="openStatus" class="open-status"></span>
+                    </li>
+                    <li>
+                        <strong>Operating Hours:</strong>
+                        <span>Monday to Sunday, 09:00 AM - 18:00 PM EST</span>>
+                    </li>               
+                </ul>
+            </div>
+            
+                       <!-- Column 2: Contact Form -->
+            <div class="contact-card">
+                <h2>Send Us a Message</h2>
+
+                <form id="contactForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="userName">Your Name</label>
+                        <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter your full name" autocomplete="name">
+                        <p class="error-msg" id="nameError"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userEmail">Email Address</label>
+                        <input type="email" id="userEmail" name="userEmail" class="form-control" placeholder="example@domain.com" autocomplete="email">
+                        <p class="error-msg" id="emailError"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userPhone">Phone Number</label>
+                        <input type="tel" id="userPhone" name="userPhone" class="form-control" placeholder="e.g. 082 123 4567" autocomplete="tel">
+                        <p class="error-msg" id="phoneError"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messageType">Type of Message</label>
+                        <select id="messageType" name="messageType" class="form-control">
+                            <option value="" disabled selected>---select---</option>
+                            <option value="General question">General question</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Complaint">Complaint</option>
+                            <option value="Booking change">Booking change</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <p class="error-msg" id="typeError"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userMessage">Your Message</label>
+                        <textarea id="userMessage" name="userMessage" class="form-control" placeholder="Write your message here..."></textarea>
+                        <p class="char-count" id="charCount">0 characters (minimum 10)</p>
+                        <p class="error-msg" id="messageError"></p>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Prepare Email</button>
+                </form>
+
+                <div class="status-box" id="statusBox" role="status" aria-live="polite"></div>
+            </div>
+
+        </div> <!-- closes contact-grid -->
+
+        <div class="back-to-top">
+            <a href="#top">Back to top</a>
+        </div>
+    </main>
+
+    <footer>
+        <p id="myparagraph">&copy; 2026 Polish &amp; Glow Nail Salon. All rights reserved.</p>
+    </footer>
+
+    <button id="topBtn" aria-label="Back to top">↑</button>
+
+    <script src="../js/main.js" defer></script>
+
+    <script>
+        // ---------- Mobile menu ----------
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        // ---------- Recipient of the email (must be a real address) ----------
+        const RECIPIENT = "info@polishandglow.co.za";
+
+        const form = document.getElementById("contactForm");
+        const statusBox = document.getElementById("statusBox");
+
+        // ---------- Validation ----------
+        function clearErrors() {
+            document.querySelectorAll(".error-msg").forEach(function (p) { p.textContent = ""; });
+            document.querySelectorAll(".form-control").forEach(function (f) { f.classList.remove("invalid"); });
+        }
+
+        function validate() {
+            clearErrors();
+            let firstBad = null;
+
+            function fail(fieldId, errorId, message) {
+                document.getElementById(errorId).textContent = message;
+                document.getElementById(fieldId).classList.add("invalid");
+                if (!firstBad) { firstBad = document.getElementById(fieldId); }
+            }
+
+            const name = document.getElementById("userName").value.trim();
+            const email = document.getElementById("userEmail").value.trim();
+            const phone = document.getElementById("userPhone").value.trim();
+            const type = document.getElementById("messageType").value;
+            const message = document.getElementById("userMessage").value.trim();
+
+            if (name.length < 2) { fail("userName", "nameError", "Enter your full name."); }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fail("userEmail", "emailError", "Enter a valid email address, like name@example.com."); }
+            if (!/^\+?[0-9 ()-]{10,15}$/.test(phone)) { fail("userPhone", "phoneError", "Enter a phone number with 10 to 15 digits."); }
+            if (type === "") { fail("messageType", "typeError", "Choose the type of message."); }
+            if (message.length < 10) { fail("userMessage", "messageError", "Write at least 10 characters."); }
+
+            if (firstBad) { firstBad.focus(); }
+            return firstBad === null;
+        }
+
+        // ---------- Submit: validate, then build the email ----------
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!validate()) {
+                statusBox.classList.remove("show");
+                return;
+            }
+
+            const name = document.getElementById("userName").value.trim();
+            const email = document.getElementById("userEmail").value.trim();
+            const phone = document.getElementById("userPhone").value.trim();
+            const type = document.getElementById("messageType").value;
+            const message = document.getElementById("userMessage").value.trim();
+
+            const subject = type + " from " + name;
+            const body =
+                "Name: " + name + "\n" +
+                "Email: " + email + "\n" +
+                "Phone: " + phone + "\n" +
+                "Message type: " + type + "\n\n" +
+                message;
+
+            const mailto = "mailto:" + RECIPIENT +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(body);
+
+            statusBox.innerHTML = "<p>Your email is ready. If your email app did not open, " +
+                "<a href=\"" + mailto + "\">click here to send it to " + RECIPIENT + "</a>.</p>";
+            statusBox.classList.add("show");
+
+            window.location.href = mailto;
+        });
+
+        // ---------- Open now / Closed badge (salon hours: 09:00 - 18:00, South African time) ----------
+const openStatus = document.getElementById("openStatus");
+const saHour = parseInt(new Date().toLocaleString("en-GB", {
+    hour: "numeric",
+    hourCycle: "h23",
+    timeZone: "Africa/Johannesburg"
+}), 10);
+
+if (saHour >= 9 && saHour < 18) {
+    openStatus.textContent = "We are open now";
+    openStatus.classList.add("open");
+} else {
+    openStatus.textContent = "We are closed right now";
+    openStatus.classList.add("closed");
+}
+
+// ---------- Live character counter for the message box ----------
+const userMessage = document.getElementById("userMessage");
+const charCount = document.getElementById("charCount");
+
+userMessage.addEventListener("input", function () {
+    const length = userMessage.value.trim().length;
+    if (length < 10) {
+        charCount.textContent = length + " characters (minimum 10)";
+        charCount.classList.remove("ok");
+    } else {
+        charCount.textContent = length + " characters";
+        charCount.classList.add("ok");
+    }
+});
+
+// ---------- Back-to-top button ----------
+const topBtn = document.getElementById("topBtn");
+window.addEventListener("scroll", function () {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+topBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// ---------- Close the mobile menu after a link is tapped ----------
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+    });
+});
+    </script>
+</body>
+</html>
