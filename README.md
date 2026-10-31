@@ -325,5 +325,5 @@ Sibahle Jacob
 ## References
 
 - BlueWave demo project (JavaScript for the hamburger menu, date stamp, accordion, form validation and clock).
-- W3Schools. How to create a responsive mobile navbar. https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
+- W3Schools. How to create a responsive mobile navbar. https://www.w3schools.com/howto/howto_js_mobile_navbar.asp.
 
