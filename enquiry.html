@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry | Polish & Glow Nail Salon</title>
+    <!-- Shared stylesheet (change the path if your styles.css is somewhere else) -->
+    <link rel="stylesheet" href="../Assets/css/styles.css">
+    <style>
+        :root {
+            --bg-dark: #120917;
+            --bg-card: #1d1126;
+            --purple-glow: #d470ff;
+            --purple-neon: #ba55d3;
+            --text-light: #f3e8fa;
+            --text-muted: #c8b3d6;
+            --input-focus: #311c40;
+            --error: #ff8fa3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION HEADER LAYOUT */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: rgba(18, 9, 23, 0.95);
+            border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #f7eaff;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-neon);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--purple-glow);
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        /* MOBILE MENU HAMBURGER */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* MAIN WRAPPER */
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .intro-section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            color: var(--purple-glow);
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* FORM BLOCK */
+        .enquiry-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(212, 112, 255, 0.15);
+            border-radius: 12px;
+            padding: 40px 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+            text-shadow: 0 0 10px var(--purple-glow);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f7eaff;
+            margin-bottom: 5px;
+        }
+
+        .form-hint {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        /* INPUT FIELDS */
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--bg-dark);
+            border: 1px solid rgba(212, 112, 255, 0.2);
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 1rem;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-control::placeholder {
+            color: #5d486b;
+        }
+
+        .form-control:focus {
+            border-color: var(--purple-glow);
+            background-color: var(--input-focus);
+            box-shadow: 0 0 8px rgba(212, 112, 255, 0.2);
+        }
+
+        select.form-control {
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        select.form-control option {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        /* SUBMIT BUTTON */
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--purple-neon), #9932cc);
+            color: #fff;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(186, 85, 211, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 15px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px var(--purple-glow);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0b050f;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #1a0f21;
+            margin-top: 60px;
+        }
+
+        #myparagraph {
+            font-size: 0.85rem;
+            color: #7b6787;
+        }
+
+        /* CHECKBOX, ERRORS, RESULT BOX */
+        .check-row { display: flex; align-items: center; gap: 10px; }
+        .check-row input { width: 18px; height: 18px; accent-color: var(--purple-neon); }
+        .check-row label { margin-bottom: 0; font-weight: normal; }
+
+        .error-msg { color: var(--error); font-size: 0.85rem; margin-top: 6px; min-height: 1.2rem; }
+        .form-control.invalid { border-color: var(--error); }
+
+        .result-box {
+            display: none;
+            margin-top: 30px;
+            padding: 22px 24px;
+            background-color: var(--input-focus);
+            border: 1px solid var(--purple-glow);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(212, 112, 255, 0.25);
+        }
+        .result-box.show { display: block; }
+        .result-box h3 { color: #fff; margin-bottom: 10px; }
+        .result-box p { margin-bottom: 8px; }
+        .result-box .total { font-size: 1.3rem; color: var(--purple-glow); font-weight: bold; }
+
+        .char-count { font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; text-align: right; }
+        .char-count.ok { color: #7be0a4; }
+
+        .live-estimate {
+            margin: 5px 0 10px;
+            padding: 12px 16px;
+            background-color: var(--input-focus);
+            border-left: 3px solid var(--purple-glow);
+            border-radius: 6px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 46px;
+            height: 46px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-neon), #9932cc);
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(186, 85, 211, 0.5);
+            z-index: 1000;
+        }
+
+        /* MOBILE SCREENS */
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #120917;
+                padding: 25px;
+                border-bottom: 1px solid rgba(212, 112, 255, 0.15);
+                text-align: center;
+                gap: 20px;
+            }
+            .nav-links.active { display: flex; }
+            .enquiry-card { padding: 30px 20px; }
+            h1 { font-size: 1.8rem; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="nav-logo">Polish & Glow</a>
+
+        <nav class="nav-links">
+            <a href="../index.html">HOME</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="enquiry.html" class="active">Enquiry</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro-section">
+            <h2>Polish & Glow Nail Salon</h2>
+            <p>Beautiful Nails. Beautiful You.</p>
+        </section>
+
+        <div class="enquiry-card">
+            <h1>Service Enquiry Form</h1>
+            <form id="enquiryForm" novalidate>
+
+                <div class="form-group">
+                    <label for="userName">Your Name</label>
+                    <span class="form-hint">Tell us who you are</span>
+                    <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter your full name" autocomplete="name">
+                    <p class="error-msg" id="nameError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="userEmail">Email Address</label>
+                    <span class="form-hint">Where we can find you</span>
+                    <input type="email" id="userEmail" name="userEmail" class="form-control" placeholder="example@domain.com" autocomplete="email">
+                    <p class="error-msg" id="emailError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceType">Service</label>
+                    <span class="form-hint">Pick the treatment you are interested in</span>
+                    <select id="serviceType" name="serviceType" class="form-control">
+                        <option value="" disabled selected>---select---</option>
+                        <option value="classic-manicure">Classic Manicure (R150)</option>
+                        <option value="gel-manicure">Gel Manicure (R250)</option>
+                        <option value="acrylic-set">Acrylic Full Set (R400)</option>
+                        <option value="pedicure">Pedicure (R200)</option>
+                    </select>
+                    <p class="error-msg" id="serviceError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="guests">Number of People</label>
+                    <span class="form-hint">Between 1 and 5 people per booking</span>
+                    <input type="number" id="guests" name="guests" class="form-control" min="1" max="5" placeholder="e.g. 2">
+                    <p class="error-msg" id="guestsError"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredDay">Preferred Day</label>
+                    <span class="form-hint">We are open Monday to Saturday</span>
+                    <select id="preferredDay" name="preferredDay" class="form-control">
+                        <option value="" disabled selected>---select---</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                    </select>
+                    <p class="error-msg" id="dayError"></p>
+                </div>
+
+                <div class="form-group">
+                    <div class="check-row">
+                        <input type="checkbox" id="nailArt" name="nailArt">
+                        <label for="nailArt">Add nail art (R80 extra per person)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="userMessage">Message</label>
+                    <textarea id="userMessage" name="userMessage" class="form-control" rows="5" placeholder="Write down details..."></textarea>
+                    <div class="char-count" id="charCount">0 characters (minimum 10)</div>
+                    <p class="error-msg" id="messageError"></p>
+                </div>
+
+                <div class="live-estimate" id="liveEstimate">Choose a service and number of people to see an estimate.</div>
+
+                <button type="submit" class="submit-btn">Submit Enquiry</button>
+
+            </form>
+
+            <div class="result-box" id="resultBox" role="status" aria-live="polite"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p id="myparagraph">&copy; 2026 Polish &amp; Glow Nail Salon. All rights reserved.</p>
+    </footer>
+
+    <button id="topBtn" aria-label="Back to top">&uarr;</button>
+
+    <script src="../js/main.js" defer></script>
+
+    <script>
+        // ---------- Mobile menu ----------
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        hamburger.addEventListener("click", function () {
+            hamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+
+        // ---------- Prices and availability ----------
+        const services = {
+            "classic-manicure": { name: "Classic Manicure", price: 150 },
+            "gel-manicure":     { name: "Gel Manicure",     price: 250 },
+            "acrylic-set":      { name: "Acrylic Full Set", price: 400 },
+            "pedicure":         { name: "Pedicure",         price: 200 }
+        };
+        const NAIL_ART_PRICE = 80;
+
+        const spotsLeft = {
+            Monday: 6, Tuesday: 5, Wednesday: 4,
+            Thursday: 3, Friday: 1, Saturday: 0
+        };
+
+        const form = document.getElementById("enquiryForm");
+        const resultBox = document.getElementById("resultBox");
+
+        // ---------- Validation ----------
+        function clearErrors() {
+            document.querySelectorAll(".error-msg").forEach(function (p) { p.textContent = ""; });
+            document.querySelectorAll(".form-control").forEach(function (f) { f.classList.remove("invalid"); });
+        }
+
+        function validate() {
+            clearErrors();
+            let firstBad = null;
+
+            function fail(fieldId, errorId, message) {
+                document.getElementById(errorId).textContent = message;
+                document.getElementById(fieldId).classList.add("invalid");
+                if (!firstBad) { firstBad = document.getElementById(fieldId); }
+            }
+
+            const name = document.getElementById("userName").value.trim();
+            const email = document.getElementById("userEmail").value.trim();
+            const service = document.getElementById("serviceType").value;
+            const guestsText = document.getElementById("guests").value;
+            const guests = Number(guestsText);
+            const day = document.getElementById("preferredDay").value;
+            const message = document.getElementById("userMessage").value.trim();
+
+            if (name.length < 2) { fail("userName", "nameError", "Enter your full name."); }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { fail("userEmail", "emailError", "Enter a valid email address, like name@example.com."); }
+            if (service === "") { fail("serviceType", "serviceError", "Choose a service."); }
+            if (guestsText === "" || !Number.isInteger(guests) || guests < 1 || guests > 5) { fail("guests", "guestsError", "Enter a whole number from 1 to 5."); }
+            if (day === "") { fail("preferredDay", "dayError", "Choose a preferred day."); }
+            if (message.length < 10) { fail("userMessage", "messageError", "Write at least 10 characters."); }
+
+            if (firstBad) { firstBad.focus(); }
+            return firstBad === null;
+        }
+
+        // ---------- Submit: validate, then show cost and availability ----------
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!validate()) {
+                resultBox.classList.remove("show");
+                return;
+            }
+
+            const name = document.getElementById("userName").value.trim();
+            const service = services[document.getElementById("serviceType").value];
+            const guests = Number(document.getElementById("guests").value);
+            const day = document.getElementById("preferredDay").value;
+            const wantsArt = document.getElementById("nailArt").checked;
+
+            const perPerson = service.price + (wantsArt ? NAIL_ART_PRICE : 0);
+            let total = perPerson * guests;
+            let discountLine = "";
+            if (guests >= 3) {
+                total = total * 0.9;
+                discountLine = "<p>A 10% group discount has been applied for 3 or more people.</p>";
+            }
+
+            const spots = spotsLeft[day];
+            let availability;
+            if (spots === 0) {
+                availability = "Sorry, " + day + " is fully booked. Please choose another day.";
+            } else if (guests > spots) {
+                availability = "Only " + spots + " spot" + (spots === 1 ? " is" : "s are") + " left on " + day + ", so we cannot fit " + guests + " people. Try another day or a smaller group.";
+            } else {
+                availability = "Good news! There is space for " + guests + " on " + day + ".";
+            }
+
+            resultBox.innerHTML =
+                "<h3>Thank you, " + name + "!</h3>" +
+                "<p>Service: <strong>" + service.name + "</strong>" + (wantsArt ? " with nail art" : "") + "</p>" +
+                "<p>People: <strong>" + guests + "</strong></p>" +
+                discountLine +
+                "<p class=\"total\">Estimated cost: R" + total.toLocaleString("en-ZA") + "</p>" +
+                "<p>" + availability + "</p>";
+
+            resultBox.classList.add("show");
+            resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        });
+
+        // ---------- Live cost estimate ----------
+        const liveEstimate = document.getElementById("liveEstimate");
+
+        function updateEstimate() {
+            const serviceKey = document.getElementById("serviceType").value;
+            const guests = Number(document.getElementById("guests").value);
+            const wantsArt = document.getElementById("nailArt").checked;
+
+            if (serviceKey === "" || !Number.isInteger(guests) || guests < 1 || guests > 5) {
+                liveEstimate.textContent = "Choose a service and number of people to see an estimate.";
+                return;
+            }
+
+            let total = (services[serviceKey].price + (wantsArt ? NAIL_ART_PRICE : 0)) * guests;
+            let note = "";
+            if (guests >= 3) {
+                total = total * 0.9;
+                note = " (includes 10% group discount)";
+            }
+            liveEstimate.textContent = "Estimated cost: R" + total.toLocaleString("en-ZA") + note;
+        }
+
+        ["serviceType", "guests", "nailArt"].forEach(function (id) {
+            document.getElementById(id).addEventListener("input", updateEstimate);
+            document.getElementById(id).addEventListener("change", updateEstimate);
+        });
+
+        // ---------- Character counter ----------
+        const userMessage = document.getElementById("userMessage");
+        const charCount = document.getElementById("charCount");
+
+        userMessage.addEventListener("input", function () {
+            const length = userMessage.value.trim().length;
+            if (length < 10) {
+                charCount.textContent = length + " characters (minimum 10)";
+                charCount.classList.remove("ok");
+            } else {
+                charCount.textContent = length + " characters";
+                charCount.classList.add("ok");
+            }
+        });
+
+        // ---------- Clear a field's error when fixed ----------
+        document.querySelectorAll(".form-control").forEach(function (field) {
+            function clearOwnError() {
+                field.classList.remove("invalid");
+                const err = field.parentElement.querySelector(".error-msg");
+                if (err) { err.textContent = ""; }
+            }
+            field.addEventListener("input", clearOwnError);
+            field.addEventListener("change", clearOwnError);
+        });
+
+        // ---------- Reset estimate and counter on form reset ----------
+        form.addEventListener("reset", function () {
+            setTimeout(function () {
+                updateEstimate();
+                charCount.textContent = "0 characters (minimum 10)";
+                charCount.classList.remove("ok");
+            }, 0);
+        });
+
+        // ---------- Back-to-top button ----------
+        const topBtn = document.getElementById("topBtn");
+        window.addEventListener("scroll", function () {
+            topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+        topBtn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // ---------- Close mobile menu after a link is tapped ----------
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
+            });
+        });
+    </script>
+</body>
+</html>
