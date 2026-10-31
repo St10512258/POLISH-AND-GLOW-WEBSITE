@@ -370,7 +370,7 @@ An internet connection is needed to load the icons and fonts.
 
 ## Author
 
-[Sibahle]
+[Sibahle Jacobs]
 
 ## Changelog
 
