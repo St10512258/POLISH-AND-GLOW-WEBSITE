@@ -225,7 +225,7 @@ https://developers.google.com/youtube/player_parameters
 
 ---
 
-# PART 3 - POE
+# PART 3 - POE.
 
 # Polish & Glow Nail Salon Website
 
