@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Polish &amp; Glow Nail Salon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #120917;
+            --bg-card: #1d1126;
+            --bg-deep: #0b050f;
+            --purple-glow: #d470ff;
+            --purple-neon: #ba55d3;
+            --text-light: #f3e8fa;
+            --text-muted: #c8b3d6;
+            --line: rgba(212, 112, 255, 0.18);
+            --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            --body: 'Jost', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--body);
+            background:
+                radial-gradient(ellipse 70% 40% at 50% 0%, rgba(186, 85, 211, 0.22), transparent 70%),
+                var(--bg-dark);
+            background-repeat: no-repeat;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        a:focus-visible, .hamburger:focus-visible, .accordion:focus-visible {
+            outline: 2px solid var(--purple-glow);
+            outline-offset: 3px;
+        }
+
+        /* ---------- HEADER / NAV ---------- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 48px;
+            background-color: rgba(18, 9, 23, 0.94);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            font-family: var(--display);
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #f7eaff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 10px var(--purple-glow), 0 0 22px var(--purple-neon);
+        }
+
+        .nav-links { display: flex; gap: 30px; }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-color 0.3s, text-shadow 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a[aria-current="page"] {
+            color: var(--purple-glow);
+            border-bottom-color: var(--purple-glow);
+            text-shadow: 0 0 8px var(--purple-glow);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 26px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* ---------- MAIN ---------- */
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 64px 24px 0;
+        }
+
+        h1 {
+            font-family: var(--display);
+            text-align: center;
+            font-size: clamp(2.6rem, 7vw, 4.2rem);
+            line-height: 1.1;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 14px;
+            text-shadow:
+                0 0 10px var(--purple-glow),
+                0 0 24px var(--purple-glow),
+                0 0 44px var(--purple-neon);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        .lead {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 44px;
+            font-family: var(--display);
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        /* ---------- ACCORDION ---------- */
+        .accordion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: var(--bg-card);
+            color: #fff;
+            font-family: var(--display);
+            font-size: 1.6rem;
+            font-weight: 600;
+            text-align: left;
+            padding: 20px 26px;
+            margin-top: 16px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+        }
+
+        .accordion::after {
+            content: "+";
+            font-family: var(--body);
+            font-size: 1.6rem;
+            color: var(--purple-glow);
+            text-shadow: 0 0 10px var(--purple-glow);
+        }
+
+        .accordion:has(+ .panel[style*="block"])::after { content: "\2212"; }
+
+        .accordion:hover,
+        .accordion:has(+ .panel[style*="block"]) {
+            border-color: var(--purple-glow);
+            box-shadow: 0 0 22px rgba(212, 112, 255, 0.28);
+        }
+
+        .panel {
+            display: none;
+            padding: 6px 26px 26px;
+            background-color: rgba(29, 17, 38, 0.6);
+            border: 1px solid var(--line);
+            border-top: none;
+            border-radius: 0 0 14px 14px;
+            overflow: hidden;
+        }
+
+        .panel p { color: var(--text-muted); font-size: 1.08rem; line-height: 1.85; margin-top: 14px; }
+
+        .feature { margin-top: 20px; }
+        .feature h3 {
+            font-family: var(--display);
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--purple-glow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .feature p { margin-top: 4px; }
+
+        /* ---------- CTA ---------- */
+        .cta-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 56px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            transition: transform 0.25s, box-shadow 0.25s, background-color 0.25s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--purple-neon), #8e3fb5);
+            box-shadow: 0 0 18px rgba(212, 112, 255, 0.45);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(212, 112, 255, 0.75); }
+
+        .btn-outline { border: 1.5px solid var(--purple-glow); }
+        .btn-outline:hover { background-color: rgba(212, 112, 255, 0.14); transform: translateY(-2px); }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background-color: var(--bg-deep);
+            padding: 44px 20px 32px;
+            text-align: center;
+            border-top: 1px solid #1a0f21;
+            margin-top: 80px;
+        }
+
+        footer p { font-size: 0.88rem; color: var(--text-muted); max-width: 640px; margin: 0 auto 16px; }
+        footer a { color: var(--purple-glow); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        .socials { display: flex; justify-content: center; gap: 26px; margin: 22px 0; }
+        .socials a { color: var(--text-light); font-size: 1.5rem; transition: color 0.3s, transform 0.3s; }
+        .socials a:hover { color: var(--purple-glow); transform: scale(1.15); }
+
+        .timestamp {
+            color: var(--purple-glow);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        @keyframes pulse-glow {
+            0%   { text-shadow: 0 0 10px var(--purple-glow), 0 0 20px var(--purple-glow); }
+            100% { text-shadow: 0 0 15px var(--purple-glow), 0 0 30px var(--purple-glow), 0 0 50px var(--purple-neon), 0 0 70px var(--purple-neon); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            h1 { animation: none; }
+            html { scroll-behavior: auto; }
+            * { transition: none !important; }
+        }
+
+        /* ---------- MOBILE ---------- */
+        @media (max-width: 768px) {
+            header { padding: 14px 20px; }
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #120917;
+                padding: 24px;
+                border-bottom: 1px solid var(--line);
+                text-align: center;
+                gap: 18px;
+            }
+            .nav-links.active { display: flex; }
+            main { padding-top: 40px; }
+            .accordion { font-size: 1.35rem; padding: 16px 18px; }
+            .panel { padding: 4px 18px 22px; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 5px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -5px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="../index.html" class="nav-logo">Polish &amp; Glow</a>
+
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="./about.html" aria-current="page">About Us</a>
+            <a href="./services.html">Services</a>
+            <a href="./enquiry.html">Enquiry</a>
+            <a href="./contact.html">Contact Us</a>
+        </nav>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <h1>About Polish &amp; Glow</h1>
+        <p class="lead">Nail care that helps you look and feel your best.</p>
+
+        <section>
+            <button class="accordion">Who We Are</button>
+            <div class="panel">
+                <p>
+                    Welcome to Polish &amp; Glow Salon, a beauty salon dedicated to helping our clients
+                    look and feel their best. We provide professional nail self-care services in a
+                    comfortable, friendly and relaxing environment.
+                </p>
+                <p>
+                    Our salon focuses on creativity, quality and customer satisfaction. Whether you are
+                    looking for a simple manicure, beautiful nail art or a relaxing pedicure, our goal
+                    is to give you an enjoyable salon experience.
+                </p>
+            </div>
+
+            <button class="accordion">Our Mission</button>
+            <div class="panel">
+                <p>
+                    Our mission is to provide high-quality nail care while creating a welcoming
+                    environment where every customer feels confident and special. We believe that
+                    beautiful nails are more than a beauty treatment. They are a way to express your
+                    personality and style.
+                </p>
+            </div>
+
+            <button class="accordion">Why Choose Us?</button>
+            <div class="panel">
+                <div class="feature">
+                    <h3><i class="fas fa-gem"></i> Quality Service</h3>
+                    <p>We provide professional, high-quality nail care to every customer.</p>
+                </div>
+                <div class="feature">
+                    <h3><i class="fas fa-palette"></i> Creative Designs</h3>
+                    <p>Choose from a variety of colours, styles and creative nail designs to match your personality.</p>
+                </div>
+                <div class="feature">
+                    <h3><i class="fas fa-spa"></i> Relaxing Environment</h3>
+                    <p>Unwind in a clean, calm and welcoming space where you can enjoy your self-care time.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-row">
+            <a href="enquiry.html" class="btn btn-primary">Make an Enquiry</a>
+            <a href="contact.html" class="btn btn-outline">Contact Us</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Polish &amp; Glow. Crafted with care for flawless finishes.
+            To get in touch, please use the details on our <a href="contact.html">contact page</a>.
+        </p>
+
+        <div class="socials">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="timestamp" id="time"></div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+
+    <script>
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active'); // animate hamburger
+            });
+
+            //Adding accordion buttons
+            const acc = document.querySelectorAll(".accordion");
+            acc.forEach(button => {
+                button.addEventListener("click", () => {
+                const panel = button.nextElementSibling;
+                panel.style.display = panel.style.display === "block" ? "none" : "block";
+                });
+            });
+
+            //Inserting TimeStamp (Dynamic content)
+            function displayTime() {
+                const now = new Date();
+                let hours = now.getHours();
+                let minutes = now.getMinutes();
+                let seconds = now.getSeconds();
+
+                // Add leading zeroes for single-digit minutes and seconds
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                const currentTime = hours + ":" + minutes + ":" + seconds;
+                document.getElementById("time").textContent = currentTime;
+            }
+
+            // Call the displayTime function every second to update the time
+            setInterval(displayTime, 1000);
+
+            // Display the time immediately when the page loads
+            displayTime();
+    </script>
+</body>
+</html>
