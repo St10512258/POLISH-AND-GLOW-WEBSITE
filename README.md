@@ -283,5 +283,109 @@ Just open index.html in browser, or visit live link above.
     A customer will be told when typing that a certain number of characters are allowed and where it stops (maximu)
 ---
 
+# PART 3 - POE
+
+# Polish & Glow Nail Salon Website
+
+A static website for **Polish & Glow Nail Salon**, built with HTML, CSS and JavaScript.
+It uses a dark purple neon theme and is designed to work on desktop and mobile.
+
+## Pages
+
+| Page | File | What it does |
+|------|------|--------------|
+| Home | `index.html` | Welcome page with services overview, prices, opening hours and a live date stamp |
+| About Us | `Pages/about.html` | Accordion sections: Who We Are, Our Mission, Why Choose Us |
+| Services | `Pages/services.html` | Service cards with photos, prices and a search box |
+| Enquiry | `Pages/enquiry.html` | Enquiry form with validation and a success message |
+| Contact Us | `Pages/contact.html` | Contact details |
+
+## Features
+
+- Responsive layout for desktop and mobile
+- Hamburger navigation menu on small screens
+- Real-time date stamp on the home page
+- Accordion sections on the About page
+- Live clock in the footer of the About and Enquiry pages
+- Search box on the Services page that filters the service cards
+- Back-to-top button on the Services page
+- Enquiry form validation with a success message
+- Font Awesome icons for the social links and service icons
+
+## JavaScript Summary
+
+- **index.html:** hamburger menu toggle and date stamp (`displayDate`)
+- **about.html:** hamburger menu toggle, accordion buttons, live clock (`displayTime`)
+- **services.html:** hamburger menu toggle (closes after a link is tapped), service search filter, back-to-top button
+- **enquiry.html:** hamburger menu toggle, form validation (enquiry type, name, email and message are required), success message, live clock (`displayTime`)
+
+The JavaScript for the hamburger menu, date stamp, accordion, form validation and clock follows the BlueWave demo project.
+
+## File & Folder Structure
+
+```
+POLISH-AND-GLOW-FINAL/
+├── index.html               # Home page (entry point)
+├── Pages/
+│   ├── about.html           # About Us page
+│   ├── services.html        # Services page
+│   ├── enquiry.html         # Enquiry form page
+│   └── contact.html         # Contact page
+├── Assets/
+│   └── images/              # Photos used on the Services page
+└── README.md                # This file
+```
+
+## Services and Prices
+
+| Service | Price |
+|---------|-------|
+| Classic Manicure | R150 |
+| Gel Manicure | R250 |
+| Acrylic Full Set | R400 |
+| Pedicure | R200 |
+| Nail art (add-on) | +R80 per person |
+
+Open Monday to Saturday.
+
+## Installation / How to Run
+
+1. Download or clone this project.
+2. Open `index.html` in any modern browser.
+3. No server setup is needed (static website).
+
+## Dependencies
+
+- [Font Awesome 7.0.1](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css) for icons
+- [Google Fonts](https://fonts.google.com/) (Cormorant Garamond and Jost) for typography
+
+An internet connection is needed to load the icons and fonts.
+
+## Usage Instructions
+
+- Edit `index.html` to update the home page content.
+- Edit the `<style>` section at the top of each page to change colours, fonts or layout. The main colours are set at the top of each page under `:root`.
+- Add new pages inside the `Pages/` folder and link them in the navigation bar of every page.
+- Put new photos in `Assets/images/`.
+
+## Author
+
+[Your Name]
+
+## Changelog
+
+**v1.0.0 (2026-10-30)**
+- Created the home, About Us, Services, Enquiry and Contact pages
+- Added the dark purple neon theme and responsive layout
+- Added the hamburger navigation for small screens
+- Added JavaScript: date stamp, accordion, live clock, service search, back-to-top button and enquiry form validation
+
+## References
+
+- BlueWave demo project (JavaScript for the hamburger menu, date stamp, accordion, form validation and clock)
+- W3Schools. How to create a responsive mobile navbar. https://www.w3schools.com/howto/howto_js_mobile_navbar.asp
+
+
+
 
 
