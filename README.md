@@ -317,7 +317,7 @@ Sibahle Jacob.
 ## Changelog
 
 **v1.0.0 (2026-10-30)**
-- Created the home, About Us, Services, Enquiry and Contact pages
+- Created the home, About Us, Services, Enquiry and Contact pages.
 - Added the dark purple neon theme and responsive layout.
 - Added the hamburger navigation for small screens.
 - Added JavaScript: date stamp, accordion, live clock, service search, back-to-top button and enquiry form validation.
